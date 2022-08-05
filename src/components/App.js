@@ -1,5 +1,6 @@
 import "../style/App.css";
 import Contact from "./Contact";
+import SignupForm from "./SignupForm";
 
 const contactInfo = [
   {
@@ -47,6 +48,7 @@ function App() {
           isDeletable={contact.isDeletable}
         />
       ))}
+      <SignupForm />
     </div>
   );
 }
