@@ -1,40 +1,52 @@
 import "../style/App.css";
 import Contact from "./Contact";
 
+const contactInfo = [
+  {
+    name: "Eva Hanchier",
+    phone: "📞 03.49.79.52.46",
+    email: "evah@gmail.com",
+    isDeletable: true,
+  },
+  {
+    name: "Yvon Hanchier",
+    phone: "📞 03.49.79.52.46",
+    email: "yvonh@gmail.com",
+    isDeletable: true,
+  },
+  {
+    name: "Jean Chie",
+    phone: "📞 03.49.79.52.46",
+    email: "jeanc@gmail.com",
+    isDeletable: true,
+  },
+  {
+    name: "Maman",
+    phone: "📞 03.49.79.52.46",
+    email: "mamere@gmail.com",
+    isDeletable: false,
+  },
+  {
+    name: "Maison",
+    phone: "📞 03.49.79.52.46",
+    email: "maison@gmail.com",
+    isDeletable: false,
+  },
+];
+
 function App() {
   return (
     <div className="App">
       <h1>Mes contacts</h1>
-      <Contact
-        name="Eva Hanchier"
-        phone="📞 03.49.79.52.46"
-        email="evah@gmail.com"
-        isDeletable={true}
-      />
-      <Contact
-        name="Yvon Hanchier"
-        phone="📞 03.49.79.52.46"
-        email="yvonh@gmail.com"
-        isDeletable={true}
-      />
-      <Contact
-        name="Jean Chie"
-        phone="📞 03.49.79.52.46"
-        email="jeanc@gmail.com"
-        isDeletable={true}
-      />
-      <Contact
-        name="Maman"
-        phone="📞 03.49.79.52.46"
-        email="mamere@gmail.com"
-        isDeletable={false}
-      />
-      <Contact
-        name="Maison"
-        phone="📞 03.49.79.52.46"
-        email="maison@gmail.com"
-        isDeletable={false}
-      />
+      {contactInfo.map((contact, index) => (
+        <Contact
+          key={index}
+          name={contact.name}
+          phone={contact.phone}
+          email={contact.email}
+          isDeletable={contact.isDeletable}
+        />
+      ))}
     </div>
   );
 }
